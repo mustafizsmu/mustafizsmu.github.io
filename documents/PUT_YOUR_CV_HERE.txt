@@ -1,0 +1,8 @@
+Put your CV and other PDF documents in this folder.
+
+Recommended file names:
+- curriculum_vitae_Mustafizur_Rahman.pdf
+- research_statement.pdf
+- teaching_statement.pdf
+
+The website already links to these names.
