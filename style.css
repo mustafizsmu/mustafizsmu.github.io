@@ -134,30 +134,37 @@ em { font-family: var(--serif); font-style: italic; }
   transform: rotate(180deg);
 }
 
-.dropdown {
+ul.dropdown {
   display: none;
   position: absolute;
-  top: 100%;
+  top: calc(100% + 4px);
   left: 0;
-  min-width: 200px;
-  list-style: none;
+  min-width: 210px;
+  list-style: none !important;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 10px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.1);
   padding: 6px;
+  margin: 0;
   z-index: 50;
 }
 
-html[data-theme="dark"] .dropdown {
+html[data-theme="dark"] ul.dropdown {
   box-shadow: 0 8px 32px rgba(0,0,0,0.4);
 }
 
-.has-dropdown:hover .dropdown {
+.has-dropdown:hover > ul.dropdown {
   display: block;
 }
 
-.dropdown li a {
+ul.dropdown li {
+  list-style: none !important;
+  margin: 0;
+  padding: 0;
+}
+
+ul.dropdown li a {
   display: block;
   padding: 10px 14px;
   font-size: 0.84rem;
@@ -168,7 +175,7 @@ html[data-theme="dark"] .dropdown {
   transition: color 0.15s, background 0.15s;
 }
 
-.dropdown li a:hover {
+ul.dropdown li a:hover {
   color: var(--text);
   background: var(--accent-bg);
 }
@@ -909,12 +916,17 @@ html[data-theme="dark"] .academic-table thead th {
     min-width: auto;
   }
 
-  .has-dropdown:hover .dropdown,
-  .dropdown {
+  .has-dropdown:hover > ul.dropdown,
+  ul.dropdown {
     display: block;
+    position: static;
+    border: none;
+    box-shadow: none;
+    padding: 0 0 0 16px;
+    min-width: auto;
   }
 
-  .dropdown li a {
+  ul.dropdown li a {
     padding: 8px 14px;
     font-size: 0.82rem;
   }
