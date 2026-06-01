@@ -21,6 +21,28 @@ document.addEventListener("click", (e) => {
   if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
     navLinks.classList.remove("open");
   }
+  // Close dropdown when clicking outside
+  const dropdown = document.getElementById("researchDropdown");
+  if (dropdown && !dropdown.contains(e.target)) {
+    dropdown.classList.remove("open");
+  }
+});
+
+// ===== Dropdown toggle =====
+const dropdownTrigger = document.querySelector(".dropdown-trigger");
+if (dropdownTrigger) {
+  dropdownTrigger.addEventListener("click", (e) => {
+    e.preventDefault();
+    document.getElementById("researchDropdown").classList.toggle("open");
+  });
+}
+
+// Close dropdown when a dropdown link is clicked
+document.querySelectorAll("div.dropdown a").forEach((link) => {
+  link.addEventListener("click", () => {
+    document.getElementById("researchDropdown").classList.remove("open");
+    navLinks.classList.remove("open");
+  });
 });
 
 // ===== Theme toggle =====

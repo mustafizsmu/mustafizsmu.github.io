@@ -120,51 +120,44 @@ em { font-family: var(--serif); font-style: italic; }
   position: relative;
 }
 
-.has-dropdown > a {
-  display: inline-flex;
+.dropdown-trigger {
+  display: inline-flex !important;
   align-items: center;
   gap: 4px;
+  cursor: pointer;
 }
 
-.has-dropdown > a svg {
+.dropdown-trigger svg {
   transition: transform 0.2s;
 }
 
-.has-dropdown:hover > a svg {
+.has-dropdown.open .dropdown-trigger svg {
   transform: rotate(180deg);
 }
 
-ul.dropdown {
+div.dropdown {
   display: none;
   position: absolute;
   top: calc(100% + 4px);
   left: 0;
   min-width: 210px;
-  list-style: none !important;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 10px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.1);
   padding: 6px;
-  margin: 0;
   z-index: 50;
 }
 
-html[data-theme="dark"] ul.dropdown {
+html[data-theme="dark"] div.dropdown {
   box-shadow: 0 8px 32px rgba(0,0,0,0.4);
 }
 
-.has-dropdown:hover > ul.dropdown {
+.has-dropdown.open div.dropdown {
   display: block;
 }
 
-ul.dropdown li {
-  list-style: none !important;
-  margin: 0;
-  padding: 0;
-}
-
-ul.dropdown li a {
+div.dropdown a {
   display: block;
   padding: 10px 14px;
   font-size: 0.84rem;
@@ -175,7 +168,7 @@ ul.dropdown li a {
   transition: color 0.15s, background 0.15s;
 }
 
-ul.dropdown li a:hover {
+div.dropdown a:hover {
   color: var(--text);
   background: var(--accent-bg);
 }
@@ -908,7 +901,7 @@ html[data-theme="dark"] .academic-table thead th {
     padding: 10px 14px;
   }
 
-  .dropdown {
+  div.dropdown {
     position: static;
     border: none;
     box-shadow: none;
@@ -916,8 +909,8 @@ html[data-theme="dark"] .academic-table thead th {
     min-width: auto;
   }
 
-  .has-dropdown:hover > ul.dropdown,
-  ul.dropdown {
+  .has-dropdown.open div.dropdown,
+  .has-dropdown div.dropdown {
     display: block;
     position: static;
     border: none;
@@ -926,7 +919,7 @@ html[data-theme="dark"] .academic-table thead th {
     min-width: auto;
   }
 
-  ul.dropdown li a {
+  div.dropdown a {
     padding: 8px 14px;
     font-size: 0.82rem;
   }

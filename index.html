@@ -27,14 +27,14 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="#about" data-section="about">About</a></li>
       <li><a href="#education" data-section="education">Education</a></li>
-      <li class="has-dropdown">
-        <a href="#research" data-section="research">Research <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
-        <ul class="dropdown">
-          <li><a href="#research">Research Interests</a></li>
-          <li><a href="#publications">Publications</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#collaborators">Collaborators</a></li>
-        </ul>
+      <li class="has-dropdown" id="researchDropdown">
+        <a href="#research" data-section="research" class="dropdown-trigger">Research <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
+        <div class="dropdown" id="dropdownMenu">
+          <a href="#research">Research Interests</a>
+          <a href="#publications">Publications</a>
+          <a href="#projects">Projects</a>
+          <a href="#collaborators">Collaborators</a>
+        </div>
       </li>
       <li><a href="#experience" data-section="experience">Experience</a></li>
       <li><a href="#contact" data-section="contact">Contact</a></li>
