@@ -115,6 +115,64 @@ em { font-family: var(--serif); font-style: italic; }
   background: var(--accent-bg);
 }
 
+/* Dropdown */
+.has-dropdown {
+  position: relative;
+}
+
+.has-dropdown > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.has-dropdown > a svg {
+  transition: transform 0.2s;
+}
+
+.has-dropdown:hover > a svg {
+  transform: rotate(180deg);
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  list-style: none;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  padding: 6px;
+  z-index: 50;
+}
+
+html[data-theme="dark"] .dropdown {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+
+.has-dropdown:hover .dropdown {
+  display: block;
+}
+
+.dropdown li a {
+  display: block;
+  padding: 10px 14px;
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-radius: 6px;
+  transition: color 0.15s, background 0.15s;
+}
+
+.dropdown li a:hover {
+  color: var(--text);
+  background: var(--accent-bg);
+}
+
 .theme-toggle {
   width: 36px;
   height: 36px;
@@ -660,12 +718,138 @@ html[data-theme="dark"] .btn-primary {
   color: var(--text-tertiary);
 }
 
+/* ===== AWARDS ===== */
+.award-list { max-width: var(--max-w); }
+
+.award-entry {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.award-entry + .award-entry { border-top: 1px solid var(--border); }
+
+.award-entry time {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: var(--text-tertiary);
+  font-weight: 500;
+}
+
+.award-entry h3 {
+  font-family: var(--serif);
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.award-entry p {
+  margin-top: 4px;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ===== COLLABORATORS ===== */
+.collab-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.collab-entry {
+  background: var(--surface);
+  padding: 24px;
+}
+
+.collab-entry h3 {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.collab-entry p {
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+  margin-top: 2px;
+  line-height: 1.5;
+}
+
+.collab-affil {
+  color: var(--text-tertiary) !important;
+  font-size: 0.82rem !important;
+}
+
+.collab-entry .teaching-badge {
+  margin-top: 10px;
+}
+
 /* ===== EDUCATION DETAIL ===== */
 .edu-detail {
   margin-top: 4px;
   font-size: 0.86rem !important;
   color: var(--text-tertiary) !important;
   line-height: 1.65;
+}
+
+/* ===== ACADEMIC TABLE ===== */
+.table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.academic-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.academic-table thead th {
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-align: left;
+  padding: 12px 16px;
+  white-space: nowrap;
+}
+
+html[data-theme="dark"] .academic-table thead th {
+  background: #1e3a5f;
+}
+
+.academic-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-secondary);
+  vertical-align: top;
+  line-height: 1.6;
+}
+
+.academic-table td:first-child {
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.academic-table tbody tr:nth-child(even) {
+  background: var(--surface-alt);
+}
+
+.academic-table tbody tr:hover {
+  background: color-mix(in srgb, var(--accent) 4%, var(--surface));
 }
 
 /* ===== FOOTER ===== */
@@ -717,6 +901,24 @@ html[data-theme="dark"] .btn-primary {
     padding: 10px 14px;
   }
 
+  .dropdown {
+    position: static;
+    border: none;
+    box-shadow: none;
+    padding: 0 0 0 16px;
+    min-width: auto;
+  }
+
+  .has-dropdown:hover .dropdown,
+  .dropdown {
+    display: block;
+  }
+
+  .dropdown li a {
+    padding: 8px 14px;
+    font-size: 0.82rem;
+  }
+
   .hero-inner {
     grid-template-columns: 1fr;
     padding: 48px 20px 56px;
@@ -740,13 +942,15 @@ html[data-theme="dark"] .btn-primary {
 
   .research-grid,
   .project-grid,
-  .cert-grid {
+  .cert-grid,
+  .collab-grid {
     grid-template-columns: 1fr;
   }
 
   .pub-entry,
   .edu-entry,
-  .news-entry {
+  .news-entry,
+  .award-entry {
     grid-template-columns: 1fr;
     gap: 4px;
   }

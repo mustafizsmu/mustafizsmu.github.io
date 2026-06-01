@@ -27,10 +27,16 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="#about" data-section="about">About</a></li>
       <li><a href="#education" data-section="education">Education</a></li>
-      <li><a href="#research" data-section="research">Research</a></li>
-      <li><a href="#publications" data-section="publications">Publications</a></li>
+      <li class="has-dropdown">
+        <a href="#research" data-section="research">Research <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
+        <ul class="dropdown">
+          <li><a href="#research">Research Interests</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#collaborators">Collaborators</a></li>
+        </ul>
+      </li>
       <li><a href="#experience" data-section="experience">Experience</a></li>
-      <li><a href="#projects" data-section="projects">Projects</a></li>
       <li><a href="#contact" data-section="contact">Contact</a></li>
     </ul>
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
@@ -51,7 +57,7 @@
       <div class="hero-text">
         <h1>Mustafizur Rahman</h1>
         <p class="hero-role">PhD Candidate in Computational &amp; Applied Mathematics</p>
-        <p class="hero-affiliation">Southern Methodist University, Dallas, Texas</p>
+        <p class="hero-affiliation">Southern Methodist University · Dallas, Texas</p>
         <p class="hero-summary">
           My research combines PDE modeling, numerical simulation, and scientific machine learning
           to study biological transport in hydrogel and mucus systems, nanofluid heat transfer,
@@ -75,14 +81,12 @@
       <h2>News</h2>
       <div class="news-list">
         <div class="news-entry">
-          <time>2026</time>
-          <p><strong>Qualifying exams passed</strong> — Successfully completed PhD written qualifying examinations and oral defense.</p>
-          </div>
+          <time>2025</time>
+          <p><strong>Research Assistant</strong> — Worked with Dr. Vladimir Ajaev on mathematical and computational models of hydrogel swelling, diffusion, and fluid-structure interactions.</p>
+        </div>
         <div class="news-entry">
           <time>2025</time>
-          <p><strong>Research Assistant</strong> — Working with Dr. Vladimir Ajaev on mathematical and computational models of hydrogel swelling, diffusion, and fluid-structure interactions.</p>
-        
-        
+          <p><strong>Qualifying exams passed</strong> — Successfully completed PhD written qualifying examinations and oral defense.</p>
         </div>
         <div class="news-entry">
           <time>2025</time>
@@ -130,35 +134,48 @@
   <section class="section" id="education">
     <div class="section-inner">
       <h2>Education</h2>
-      <div class="edu-list">
-        <div class="edu-entry">
-          <time>2024 – Present</time>
-          <div>
-            <h3>PhD in Computational &amp; Applied Mathematics</h3>
-            <p>Southern Methodist University, Dallas, <Texas></Texas-75231></p>
-            <p class="edu-detail">Advisor: Dr. Vladimir Ajaev. Passed qualifying exams (written and oral) in 2025. Research on hydrogel swelling, diffusion, and biological transport models.</p>
-          </div>
-        </div>
-        <div class="edu-entry">
-          <time>2022 – 2023</time>
-          <div>
-            <h3>MS in Applied Mathematics</h3>
-            <p>University of Dhaka</p>
-            <p class="edu-detail">Thesis: Mathematical Modelling of Filtration — Removal of Arsenic from Drinking Water. Supervisor: Dr. Tania Sharmin Khaleque. UGC-funded research project.</p>
-          </div>
-        </div>
-        <div class="edu-entry">
-          <time>2017 – 2021</time>
-          <div>
-            <h3>BS in Applied Mathematics</h3>
-            <p>University of Dhaka</p>
-            <p class="edu-detail">Project: Hybrid copper–aluminum oxide nanofluid flow with thermal radiation. Supervisor: Dr. Mohammad Ferdows.</p>
-          </div>
-        </div>
+      <div class="table-wrap">
+        <table class="academic-table">
+          <thead>
+            <tr>
+              <th>Degree</th>
+              <th>Major Subject</th>
+              <th>Institution</th>
+              <th>Country</th>
+              <th>Year</th>
+              <th>Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>PhD</td>
+              <td>Computational &amp; Applied Mathematics</td>
+              <td>Southern Methodist University</td>
+              <td>USA</td>
+              <td>2024–Present</td>
+              <td>Advisor: Dr. Vladimir Ajaev. Passed qualifying exams (written &amp; oral) in 2025.</td>
+            </tr>
+            <tr>
+              <td>MS</td>
+              <td>Applied Mathematics</td>
+              <td>University of Dhaka</td>
+              <td>Bangladesh</td>
+              <td>2022–2023</td>
+              <td>Thesis: Mathematical Modelling of Filtration — Removal of Arsenic from Drinking Water. Supervisor: Dr. Tania Sharmin Khaleque.</td>
+            </tr>
+            <tr>
+              <td>BS</td>
+              <td>Applied Mathematics</td>
+              <td>University of Dhaka</td>
+              <td>Bangladesh</td>
+              <td>2017–2021</td>
+              <td>Project: Hybrid Cu–Al₂O₃ nanofluid flow with thermal radiation. Supervisor: Dr. Mohammad Ferdows.</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
-
 
   <!-- RESEARCH -->
   <section class="section" id="research">
@@ -309,7 +326,6 @@
     </div>
   </section>
 
-  
   <!-- CERTIFICATIONS -->
   <section class="section" id="certifications">
     <div class="section-inner">
@@ -343,6 +359,83 @@
     </div>
   </section>
 
+  <!-- AWARDS -->
+  <section class="section" id="awards">
+    <div class="section-inner">
+      <h2>Awards &amp; Honors</h2>
+      <div class="award-list">
+        <div class="award-entry">
+          <time>2025</time>
+          <div>
+            <h3>PhD Qualifying Examinations</h3>
+            <p>Successfully passed written qualifying examinations and oral defense, Southern Methodist University.</p>
+          </div>
+        </div>
+        <div class="award-entry">
+          <time>2024</time>
+          <div>
+            <h3>Teaching Assistantship</h3>
+            <p>Department of Mathematics, Southern Methodist University.</p>
+          </div>
+        </div>
+        <div class="award-entry">
+          <time>2022</time>
+          <div>
+            <h3>University Grants Commission Research Funding</h3>
+            <p>Funded research project on mathematical modeling of arsenic removal using filtration, University of Dhaka.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLLABORATORS -->
+  <section class="section" id="collaborators">
+    <div class="section-inner">
+      <h2>Collaborators</h2>
+      <div class="collab-grid">
+        <div class="collab-entry">
+          <h3>Dr. Vladimir Ajaev</h3>
+          <p>Professor, Department of Mathematics</p>
+          <p class="collab-affil">Southern Methodist University</p>
+          <span class="teaching-badge">PhD Advisor</span>
+        </div>
+        <div class="collab-entry">
+          <h3>Dr. Tania Sharmin Khaleque</h3>
+          <p>Associate Professor, Department of Applied Mathematics</p>
+          <p class="collab-affil">University of Dhaka</p>
+          <span class="teaching-badge">MS Supervisor</span>
+        </div>
+        <div class="collab-entry">
+          <h3>Dr. Mohammad Ferdows</h3>
+          <p>Professor &amp; Chairman, Department of Applied Mathematics</p>
+          <p class="collab-affil">University of Dhaka</p>
+          <span class="teaching-badge">BS Supervisor</span>
+        </div>
+        <div class="collab-entry">
+          <h3>Dr. M. D. Shamshuddin</h3>
+          <p>Co-author</p>
+          <p class="collab-affil">Fluid Dynamics &amp; Heat Transfer</p>
+        </div>
+        <div class="collab-entry">
+          <h3>Dr. Mohamed R. Eid</h3>
+          <p>Co-author</p>
+          <p class="collab-affil">Nanofluid &amp; Heat Transfer</p>
+        </div>
+        <div class="collab-entry">
+          <h3>Shakil Mojumdar</h3>
+          <p>Co-author</p>
+          <p class="collab-affil">Mathematical Modeling &amp; Filtration</p>
+        </div>
+        <div class="collab-entry">
+          <h3>Aimad Koulali</h3>
+          <p>Co-author</p>
+          <p class="collab-affil">Fluid Dynamics</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section class="section" id="contact">
     <div class="section-inner">
@@ -350,7 +443,6 @@
       <div class="contact-body">
         <p class="contact-intro">I am interested in collaborations related to computational modeling, biological transport, hydrogel systems, drug delivery, electrochemical physics, and scientific machine learning.</p>
         <dl class="contact-details">
-          <div><dt>Email</dt><dd><a href="mailto:mustafizurr@smu.edu">mustafizurr@smu.edu</a></dd></div>
           <div><dt>Email</dt><dd><a href="mailto:mustafizurduamath@gmail.com">mustafizurduamath@gmail.com</a></dd></div>
           <div><dt>Affiliation</dt><dd>Department of Mathematics, Southern Methodist University</dd></div>
           <div><dt>Location</dt><dd>Dallas, Texas, USA</dd></div>
